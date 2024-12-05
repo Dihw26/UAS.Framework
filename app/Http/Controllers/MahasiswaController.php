@@ -30,7 +30,14 @@ class MahasiswaController extends Controller
             'prodi' => $request->prodi,
         ]);
 
-        // Redirect kembali ke halaman utama dengan pesan sukses
         return redirect()->route('mahasiswa.index')->with('success', 'Data mahasiswa berhasil disimpan!');
+    }
+
+    public function destroy($id)
+    {
+        $mahasiswa = Mahasiswa::findOrFail($id);
+        $mahasiswa->delete();
+
+        return redirect()->route('mahasiswa.index')->with('success', 'Data mahasiswa berhasil dihapus!');
     }
 }

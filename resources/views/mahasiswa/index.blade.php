@@ -53,6 +53,14 @@
                     <td>{{ $mahasiswa->npm }}</td>
                     <td>{{ $mahasiswa->nama }}</td>
                     <td>{{ $mahasiswa->prodi }}</td>
+                    <td>
+                        <!-- Form untuk hapus -->
+                        <form action="{{ route('mahasiswa.destroy', $mahasiswa->id) }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Hapus</button>
+                        </form>
+                    </td>
                 </tr>
                 @empty
                 <tr>
