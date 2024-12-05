@@ -69,6 +69,10 @@
                 @endforelse
             </tbody>
         </table>
+        <div class="d-flex justify-content-between mb-3">
+            <h2>Data Mahasiswa</h2>
+            <a href="{{ route('mahasiswa.export') }}" class="btn btn-success">Export ke Excel</a>
+        </div>
     </div>
 </body>
 
